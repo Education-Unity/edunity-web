@@ -1,9 +1,9 @@
 <template>
-  <HelloWorld />
+
 </template>
 
 <script lang="ts">
   export default {
-    name: "index"
+    name: "home"
   }
 </script>

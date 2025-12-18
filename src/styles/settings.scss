@@ -4,7 +4,15 @@
  * Configures SASS variables and Vuetify overwrites
  */
 
+@use '@styles/common.scss' as *;
+
+
 // https://vuetifyjs.com/features/sass-variables/`
 // @use 'vuetify/settings' with (
 //   $color-pack: false
 // );
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
