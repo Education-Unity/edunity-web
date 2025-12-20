@@ -20,10 +20,15 @@ declare module 'vue-router/auto-routes' {
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/about': RouteRecordInfo<'/about', '/about', Record<never, never>, Record<never, never>>,
+    '/branding': RouteRecordInfo<'/branding', '/branding', Record<never, never>, Record<never, never>>,
+    '/contact': RouteRecordInfo<'/contact', '/contact', Record<never, never>, Record<never, never>>,
     '/home': RouteRecordInfo<'/home', '/home', Record<never, never>, Record<never, never>>,
     '/login': RouteRecordInfo<'/login', '/login', Record<never, never>, Record<never, never>>,
+    '/missions': RouteRecordInfo<'/missions', '/missions', Record<never, never>, Record<never, never>>,
+    '/pricing': RouteRecordInfo<'/pricing', '/pricing', Record<never, never>, Record<never, never>>,
     '/privacy': RouteRecordInfo<'/privacy', '/privacy', Record<never, never>, Record<never, never>>,
     '/register': RouteRecordInfo<'/register', '/register', Record<never, never>, Record<never, never>>,
+    '/terms': RouteRecordInfo<'/terms', '/terms', Record<never, never>, Record<never, never>>,
   }
 
   /**
@@ -45,6 +50,14 @@ declare module 'vue-router/auto-routes' {
       routes: '/about'
       views: never
     }
+    'src/pages/branding.vue': {
+      routes: '/branding'
+      views: never
+    }
+    'src/pages/contact.vue': {
+      routes: '/contact'
+      views: never
+    }
     'src/pages/home.vue': {
       routes: '/home'
       views: never
@@ -53,12 +66,24 @@ declare module 'vue-router/auto-routes' {
       routes: '/login'
       views: never
     }
+    'src/pages/missions.vue': {
+      routes: '/missions'
+      views: never
+    }
+    'src/pages/pricing.vue': {
+      routes: '/pricing'
+      views: never
+    }
     'src/pages/privacy.vue': {
       routes: '/privacy'
       views: never
     }
     'src/pages/register.vue': {
       routes: '/register'
+      views: never
+    }
+    'src/pages/terms.vue': {
+      routes: '/terms'
       views: never
     }
   }

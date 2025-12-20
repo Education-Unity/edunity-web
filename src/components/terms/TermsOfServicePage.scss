@@ -1,0 +1,123 @@
+@use "@styles/common.scss" as *;
+
+.tos-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #fff, #d2f1ff, #fdd4ff);
+}
+
+.tos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8rem 2rem;
+}
+
+.tos-header {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  .tos-title {
+    font-size: 64px;
+    font-weight: 600;
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    margin-bottom: 1.25rem;
+  }
+
+  .tos-subtitle {
+    font-size: 1.25rem;
+    color: #64748b;
+  }
+}
+
+.tos-toc {
+  background: #ffffffcc;
+  border-radius: 1.5rem;
+  padding: 2rem 3rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  margin-bottom: 3.5rem;
+
+  .toc-title {
+    font-size: 2rem;
+    font-weight: 600;
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.75rem 2rem;
+
+    li {
+      font-size: 1.05rem;
+
+      a {
+        color: $primary-color;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: $secondary-color;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.tos-box {
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  padding: 4rem 3rem;
+}
+
+.tos-intro {
+  margin-bottom: 4rem;
+
+  p {
+    color: #475569;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.tos-section {
+  margin-bottom: 3rem;
+
+  .tos-section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+
+  .tos-section-text {
+    color: #475569;
+    font-size: 1.05rem;
+    white-space: pre-line;
+  }
+}
+
+.tos-footer {
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 4rem;
+  padding-top: 2rem;
+
+  p {
+    color: #475569;
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+}

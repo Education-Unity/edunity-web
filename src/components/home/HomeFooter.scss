@@ -1,0 +1,78 @@
+@use "@styles/common.scss" as *;
+
+.home-footer {
+  background-color: #0f172a !important;
+  color: white;
+
+  .footer-container {
+    max-width: 1250px;
+    padding: 3rem 1.5rem;
+  }
+
+  .footer-grid {
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .footer-section {
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #FFF;
+    }
+
+    .footer-description {
+      color: #94a3b8;
+    }
+
+    .footer-title {
+      color: #FFF;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .footer-links {
+      background: transparent !important;
+
+      :deep(.v-list-item) {
+        min-height: auto;
+        padding: 0;
+
+        a {
+          color: #94a3b8;
+          text-decoration: none;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+
+    .footer-socials {
+
+      .v-list-item-title {
+        color: #94a3b8 !important;
+        font-size: 0.5rem !important;
+      }
+
+      a {
+        color: #94a3b8;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .v-list-item-title {
+    color: #FFF !important;
+    font-size: .9rem !important;
+  }
+
+  .footer-bottom {
+    color: #94a3b8;
+  }
+}

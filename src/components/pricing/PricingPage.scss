@@ -1,0 +1,319 @@
+@use "@styles/common.scss" as *;
+
+.pricing-page {
+  background: linear-gradient(to bottom bottom, #ffffff, #f0f9ff, #fdf4ff);
+  min-height: 100vh;
+
+  .pricing-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem;
+  }
+
+  .pricing-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    .pricing-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+
+      @media (max-width: 600px) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .pricing-subtitle {
+      font-size: 1.25rem;
+      color: #64748b;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  .category-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    .toggle-bg {
+      background: #f1f5f9;
+      padding: 0.25rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      position: relative;
+    }
+
+    button {
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      border: none;
+      background: transparent;
+      color: #64748b;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.active {
+        background: #fff;
+        color: $primary-color;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .billing-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+
+    .billing-label {
+      color: #334155;
+      font-weight: 500;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 6rem;
+    align-items: flex-start;
+  }
+
+  .plan-card {
+    border-radius: 1.5rem;
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e2e8f0;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    &.popular {
+      border: 2px solid $secondary-color;
+      position: relative;
+      background: linear-gradient(to bottom, #fff, #fafaff);
+    }
+
+    &.enterprise {
+      background: #0f172a;
+      color: #fff;
+      border: none;
+
+      .plan-header h2,
+      .plan-description,
+      .price,
+      .feature-list li {
+        color: #fff !important;
+      }
+      
+      .feature-list li span {
+        color: #e2e8f0;
+      }
+    }
+
+    .plan-header {
+      margin-bottom: 1.5rem;
+      text-align: center;
+
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .plan-description {
+        color: #64748b;
+        font-size: 0.95rem;
+        min-height: 44px; 
+      }
+    }
+
+    .price-box {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      min-height: 80px;
+
+      .price {
+        font-size: 3rem;
+        font-weight: 800;
+        line-height: 1;
+
+        .period {
+          font-size: 1rem;
+          color: #94a3b8;
+          font-weight: 500;
+        }
+      }
+
+      .billed-yearly {
+        font-size: 0.875rem;
+        color: #94a3b8;
+        margin-top: 0.5rem;
+      }
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+      flex-grow: 1;
+
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        color: #334155;
+        font-size: 0.95rem;
+      }
+    }
+
+    .cta-btn {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      border-radius: 0.75rem;
+    }
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 2.5rem;
+  }
+
+  .comparison-section {
+    margin-bottom: 6rem;
+    background: #fff;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th {
+        font-size: 1.1rem;
+        font-weight: 700;
+        padding: 1.5rem;
+        color: #1e293b;
+        border-bottom: 2px solid #e2e8f0;
+      }
+
+      .feature-col {
+        text-align: left;
+        width: 40%;
+      }
+
+      .plan-col {
+        text-align: center;
+        width: 30%;
+      }
+
+      td {
+        padding: 1.25rem;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 1rem;
+        color: #475569;
+
+        &.feature-name {
+          font-weight: 500;
+          color: #334155;
+        }
+
+        &.text-center {
+          text-align: center;
+        }
+
+        .text-value {
+          font-weight: 600;
+          color: #1e293b;
+        }
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+      
+      tr:hover td {
+        background-color: #f8fafc;
+      }
+    }
+  }
+
+  .enterprise-banner {
+    background: linear-gradient(90deg, #1e293b, #334155);
+    border-radius: 1.5rem;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6rem;
+    color: #fff;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .content {
+      h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        color: #cbd5e1;
+        font-size: 1.1rem;
+        max-width: 600px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+      .content p { margin: 0 auto; }
+    }
+  }
+
+  .faq-section {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+
+    .faq-panels {
+      .faq-accordion {
+        background: transparent;
+        border-bottom: 1px solid #e2e8f0;
+        
+        &::before { display: none; } 
+
+        .faq-question {
+          font-weight: 600;
+          font-size: 1.1rem;
+          color: #1e293b;
+          padding: 1.5rem 0;
+        }
+
+        .faq-answer {
+          color: #64748b;
+          line-height: 1.7;
+          padding-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+}

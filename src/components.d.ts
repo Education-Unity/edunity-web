@@ -12,12 +12,17 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AboutPage: typeof import('./components/about/AboutPage.vue')['default']
+    BrandingPage: typeof import('./components/branding/BrandingPage.vue')['default']
+    ContactPage: typeof import('./components/contact/ContactPage.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     HomeFooter: typeof import('./components/home/HomeFooter.vue')['default']
     HomeHeader: typeof import('./components/home/HomeHeader.vue')['default']
     HomePage: typeof import('./components/home/HomePage.vue')['default']
+    MissionsPage: typeof import('./components/missions/MissionsPage.vue')['default']
+    PricingPage: typeof import('./components/pricing/PricingPage.vue')['default']
     PrivacyPolicyPage: typeof import('./components/privacy/PrivacyPolicyPage.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TermsOfServicePage: typeof import('./components/terms/TermsOfServicePage.vue')['default']
   }
 }

@@ -22,7 +22,7 @@ import logo from '@assets/logo.webp'
           <v-list density="compact" class="footer-links">
             <v-list-item to="/community" title="Community" />
             <v-list-item to="/pricing" title="Pricing" />
-            <v-list-item to="/mission" title="Mission" />
+            <v-list-item to="/missions" title="Mission" />
           </v-list>
         </v-col>
 
@@ -67,71 +67,5 @@ import logo from '@assets/logo.webp'
 </template>
 
 <style lang="scss">
-.home-footer {
-  background-color: #0f172a;
-  color: white;
-
-  .footer-container {
-    max-width: 1250px;
-    padding: 3rem 1.5rem;
-  }
-
-  .footer-grid {
-    @media (min-width: 768px) {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 2rem;
-    }
-  }
-
-  .footer-section {
-    .logo-text {
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
-
-    .footer-description {
-      color: #94a3b8;
-    }
-
-    .footer-title {
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .footer-links {
-      background: transparent !important;
-
-      :deep(.v-list-item) {
-        min-height: auto;
-        padding: 0;
-
-        a {
-          color: #94a3b8;
-          text-decoration: none;
-          &:hover {
-            color: white;
-          }
-        }
-      }
-    }
-
-    .footer-socials {
-      a {
-        color: #94a3b8;
-        &:hover {
-          color: white;
-        }
-      }
-    }
-  }
-
-  .v-list-item-title {
-    color: #FFF !important;
-  }
-
-  .footer-bottom {
-    color: #94a3b8;
-  }
-}
+@use './HomeFooter.scss' as *;
 </style>

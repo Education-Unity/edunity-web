@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import AboutPage from '@components/about/AboutPage.vue';
+import AboutPage from '@/components/about/AboutPage';
 
 export default {
   name: "about",
