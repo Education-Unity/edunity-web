@@ -1,9 +1,8 @@
 <template>
-  <HelloWorld />
+  <HomePage />
 </template>
 
-<script lang="ts">
-  export default {
-    name: "index"
-  }
+<script setup lang="ts">
+import HomePage from '@components/home/HomePage.vue'
+
 </script>

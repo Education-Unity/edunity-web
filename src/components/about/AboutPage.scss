@@ -1,0 +1,155 @@
+@use "@styles/common.scss" as *;
+
+.about-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #fff, #d2f1ff, #fdd4ff);
+
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 2rem;
+  }
+
+  .about-header {
+    text-align: center;
+    margin-bottom: 8rem;
+
+    .about-title {
+      font-size: 64px;
+      font-weight: 600;
+      background: linear-gradient(to right, $primary-color, $secondary-color);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-subtitle {
+      font-size: 1.5rem;
+      color: #64748b;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
+
+  .about-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 8rem;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      background: linear-gradient(to right, $primary-color, $secondary-color);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      color: #475569;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .story-img {
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .about-journey {
+    margin-bottom: 8rem;
+    text-align: center;
+
+    .journey-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      background: linear-gradient(to right, $primary-color, $secondary-color);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 3rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    p {
+      color: #64748b;
+    }
+  }
+
+  .about-team {
+    margin-bottom: 8rem;
+    text-align: center;
+
+    .team-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      background: linear-gradient(to right, $primary-color, $secondary-color);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 3rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .team-card {
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      h3 {
+        margin-top: 1rem;
+        font-weight: 600;
+      }
+
+      p {
+        color: #64748b;
+      }
+    }
+
+    .team-image {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+  }
+
+  .about-future {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+
+    .title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      background: linear-gradient(to right, $primary-color, $secondary-color);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 3rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: #475569;
+      line-height: 1.8;
+    }
+  }
+}

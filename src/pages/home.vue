@@ -1,9 +1,14 @@
 <template>
-
+  <HomePage />
 </template>
 
 <script lang="ts">
-  export default {
-    name: "home"
+import HomePage from '@/components/home/HomePage.vue';
+
+export default {
+  name: "privacy",
+  components: {
+    HomePage
   }
+}
 </script>
