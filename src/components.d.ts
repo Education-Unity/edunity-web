@@ -12,6 +12,8 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AboutPage: typeof import('./components/about/AboutPage.vue')['default']
+    BlogHomePage: typeof import('./components/blogs/BlogsHomePage.vue')['default']
+    BlogsHomePage: typeof import('./components/blogs/BlogsHomePage.vue')['default']
     BrandingPage: typeof import('./components/branding/BrandingPage.vue')['default']
     ContactPage: typeof import('./components/contact/ContactPage.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
