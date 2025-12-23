@@ -1,0 +1,79 @@
+@use "@styles/common.scss" as *;
+
+.blog-article-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ffffff, #eef7ff);
+
+  .article-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .article-search {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto 3rem;
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      border: 1px solid #d7e1f0;
+      background: #fff;
+      border-radius: 999px;
+      padding: 0.4rem 0.8rem;
+      box-shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 0.5rem 0.75rem;
+      font-size: 1rem;
+      border: none;
+      outline: none;
+    }
+  }
+
+  .article-body {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 1rem;
+  }
+
+  .article-banner {
+   margin-bottom: 20px;
+  }
+
+  .article-left {
+    width: 100%;
+  }
+
+  .article-meta {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #868686;
+  }
+
+  .author-card {
+    margin-bottom: 15px;
+  }
+
+  .article-content {
+    margin-top: 30px;
+  }
+
+  .article-right {
+    margin-top: 50px;
+  }
+
+  @media (max-width: 900px) {
+    .article-body {
+      grid-template-columns: 1fr;
+
+      .article-right {
+        order: -1;
+      }
+    }
+  }
+}
