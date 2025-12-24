@@ -23,6 +23,7 @@ declare module 'vue' {
     HomeHeader: typeof import('./components/home/HomeHeader.vue')['default']
     HomePage: typeof import('./components/home/HomePage.vue')['default']
     LabelledContainer: typeof import('./components/commons/LabelledContainer.vue')['default']
+    LoginPage: typeof import('./components/login/LoginPage.vue')['default']
     MissionsPage: typeof import('./components/missions/MissionsPage.vue')['default']
     PricingPage: typeof import('./components/pricing/PricingPage.vue')['default']
     PrivacyPolicyPage: typeof import('./components/privacy/PrivacyPolicyPage.vue')['default']
