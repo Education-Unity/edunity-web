@@ -1,6 +1,6 @@
 @use "@styles/common.scss" as *;
 
-.login-screen {
+.register-screen {
   min-height: 100vh;
   background: linear-gradient(to bottom right, #caf7ff, #ffc1df);
   display: flex;
@@ -18,6 +18,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
+    font-weight: 600;
   }
 
   .desc {
@@ -29,18 +30,18 @@
     font-size: 12px;
     margin-top: 13px;
     text-align: center;
+    color: #64748b;
   }
 
   .link {
-    text-decoration: none;
     color: $primary-color !important;
-
+    text-decoration: none;
     &:hover {
       text-decoration: underline;
     }
   }
 
-  .login-box {
+  .register-box {
     padding: 2rem 2.5rem;
     border-radius: 1.5rem;
     background-color: #fff;
@@ -53,24 +54,21 @@
     justify-content: center;
     text-decoration: none;
     gap: 0.75rem;
-
-    .logo-icon {
-      width: 45px;
-      height: 45px;
-      border-radius: 0.75rem;
-    }
-
-    .logo-text {
-      color: #111827;
-      font-weight: 600;
-      font-size: 20px;
-    }
   }
 
-  .login-form {
+  .register-form {
     display: flex;
     flex-direction: column;
+    gap: 0.15rem;
     margin-bottom: 2rem;
+
+    .name-fields {
+      display: flex;
+      gap: 1rem;
+      & > .MuiTextField-root {
+        flex: 1;
+      }
+    }
 
     .MuiTextField-root {
       background-color: #fff;
@@ -81,23 +79,6 @@
     color: #dc2626;
     font-size: 0.9rem;
     margin-top: -0.5rem;
-  }
-
-  .form-options {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .forgot-link {
-      color: $primary-color;
-      font-size: 0.9rem;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-        color: $primary-color;
-      }
-    }
   }
 
   .submit-button {
@@ -117,65 +98,10 @@
     }
   }
 
-  .home-button {
-    margin-top: 1rem;
-    border-color: $primary-color;
-    color: $primary-color;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.03);
-      border-color: $primary-color;
-    }
-  }
-
-  .logged-in-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 1rem;
-
-    .already-logged {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      width: 100%;
-
-      .btn-submit {
-        text-transform: none;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .btn-home {
-        text-transform: none;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-    }
-
-    .btn-logout {
-      text-transform: none;
-      background-color: #fff;
-      color: #ff0000;
-      border: 1px solid #dc2626;
-
-      &:hover {
-        background-color: #ff0000;
-        color: #fff;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
-    }
-  }
-
   .divider {
-    margin: 2rem 0;
-    margin-bottom: 25px !important;
+    margin: 2rem 0 1.5rem;
     color: #64748b;
     font-size: 0.9rem;
-
     &::before,
     &::after {
       border-color: #e2e8f0;
@@ -213,18 +139,64 @@
     }
   }
 
-  .register-text {
+  .login-text {
     font-size: 0.9rem;
     color: #475569;
+    text-align: center;
 
-    .register-link {
+    .login-link {
       color: $primary-color;
       text-decoration: none;
-
+      font-weight: 500;
       &:hover {
         text-decoration: underline;
-        color: $primary-color;
       }
     }
+  }
+
+  // Phone Input & Select Styling
+  .phone-input-wrapper,
+  .select-wrapper {
+    margin-bottom: 1rem;
+
+    .select-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      color: #374151;
+      font-weight: 500;
+    }
+  }
+
+  .PhoneInput {
+    .PhoneInputInput {
+      height: 56px;
+      border-radius: 0.5rem;
+      border: 1px solid #e2e8f0;
+      padding: 0 14px;
+      font-size: 1rem;
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 3px rgba(126, 34, 206, 0.1);
+      }
+    }
+  }
+
+  .country-option,
+  .flag-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    .flag {
+      width: 24px;
+      height: 18px;
+      border-radius: 3px;
+    }
+  }
+
+  .PhoneInputInput {
+    background-color: #fff !important;
+    color: #000;
   }
 }

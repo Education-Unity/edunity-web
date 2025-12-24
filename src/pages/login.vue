@@ -1,9 +1,14 @@
 <template>
-  <p>Login goes here</p>
+  <LoginPage />
 </template>
 
 <script lang="ts">
+import LoginPage from '@/components/login/LoginPage';
+
 export default {
-  name: "login"
+  name: "login",
+  components: {
+    LoginPage
+  }
 }
 </script>

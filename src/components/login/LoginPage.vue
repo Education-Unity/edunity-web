@@ -1,11 +1,11 @@
 <template>
   <v-container fluid class="login-screen">
-    <v-container max-width="sm">
-      <v-card elevation="6" class="login-box">
-        <div class="text-center mb-4">
+    <v-container max-width="600">
+      <div class="login-box">
+        <div class="text-center mb-6">
           <RouterLink to="/" class="logo-link">
-            <img :src="logo" alt="Edunity Logo" class="logo" />
-            <h2 class="logo-text">Edunity</h2>
+            <img :src="logo" class="logo" />
+            <span class="logo-text">Edunity</span>
           </RouterLink>
 
           <p class="desc">
@@ -33,15 +33,13 @@
               variant="outlined"
             />
 
-            <p v-if="error" class="error-text">
-              {{ error }}
-            </p>
+            <p v-if="error" class="error-text">{{ error }}</p>
 
             <div class="form-options">
               <v-checkbox
                 v-model="rememberMe"
                 label="Remember me"
-                color="primary"
+                density="compact"
               />
 
               <RouterLink to="/forgot-password" class="forgot-link">
@@ -49,24 +47,17 @@
               </RouterLink>
             </div>
 
-            <v-btn
-              type="submit"
-              block
-              class="submit-button"
-            >
+            <v-btn type="submit" block class="submit-button">
               Sign in
             </v-btn>
           </form>
 
-          <v-divider class="divider">
-            Or continue with
-          </v-divider>
+          <v-divider class="divider">Or continue with</v-divider>
 
           <div class="social-buttons">
-            <GoogleLogin
-              @success="() => {}"
-              @error="() => {}"
-            />
+            <v-btn variant="outlined" block disabled>
+              Google Sign-In (coming soon)
+            </v-btn>
           </div>
 
           <p class="register-text text-center">
@@ -77,66 +68,50 @@
           </p>
 
           <p class="disclaimer">
-            Note: By signing up, you acknowledge that you agree to our
-            <RouterLink to="/terms" class="link">
-              Terms of Service
-            </RouterLink>
+            By signing up, you agree to our
+            <RouterLink to="/terms" class="link">Terms</RouterLink>
             and
-            <RouterLink to="/privacy" class="link">
-              Privacy Policy
-            </RouterLink>.
+            <RouterLink to="/privacy" class="link">Privacy Policy</RouterLink>.
           </p>
         </template>
 
         <template v-else>
           <div class="logged-in-container">
             <div class="already-logged">
-              <v-btn
-                block
-                class="btn-submit"
-                @click="router.back()"
-              >
+              <v-btn block class="btn-submit" @click="router.back()">
                 <v-icon icon="mdi-arrow-left" />
-                <span>Back</span>
+                Back
               </v-btn>
 
-              <v-btn
-                block
-                variant="outlined"
-                class="btn-home"
-                @click="router.push('/')"
-              >
+              <v-btn block variant="outlined" class="btn-home" @click="router.push('/')">
                 <v-icon icon="mdi-home" />
-                <span>Home</span>
+                Home
               </v-btn>
             </div>
 
             <p>- or -</p>
 
-            <v-btn
-              block
-              class="btn-logout"
-              @click="handleLogout"
-            >
+            <v-btn block class="btn-logout" @click="handleLogout">
               Log out
             </v-btn>
           </div>
         </template>
-      </v-card>
+      </div>
     </v-container>
+
+    <v-snackbar v-model="snackbar.show" :color="snackbar.color">
+      {{ snackbar.message }}
+    </v-snackbar>
   </v-container>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
-import { toast } from "sonner";
-import { GoogleLogin } from "@react-oauth/google";
+import logo from "@/assets/logo.webp";
 
-import logo from "../assets/logo.webp";
 import { aPost } from "@/api/axiosService";
 import { setBrowserTitle } from "@/utils/web_util";
-import { sendErrorToast } from "@/utils/toast_util";
 import { useAuthStore } from "@/stores/useAuthStore";
 
 const router = useRouter();
@@ -147,7 +122,17 @@ const password = ref("");
 const rememberMe = ref(false);
 const error = ref("");
 
+const snackbar = ref({
+  show: false,
+  message: "",
+  color: "success",
+});
+
 const { isLoggedIn, setToken, setAllowRememberMe, clearAuth } = auth;
+
+function showToast(message: string, color = "success") {
+  snackbar.value = { show: true, message, color };
+}
 
 async function handleSubmit() {
   error.value = "";
@@ -161,15 +146,15 @@ async function handleSubmit() {
     if (res.status === 200) {
       setToken(res.data.token);
       setAllowRememberMe(rememberMe.value);
-      toast.success("Welcome back!");
+      showToast("Welcome back!");
       router.push("/portal");
     } else {
       error.value = res.message;
-      sendErrorToast(res.message);
+      showToast(res.message, "error");
     }
   } catch {
     error.value = "Invalid credentials. Please check your email or password.";
-    sendErrorToast("An unknown error occurred. Please try again.");
+    showToast("An unexpected error occurred", "error");
   }
 }
 
@@ -184,7 +169,5 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@use "@styles/common.scss" as *;
-
-@import "./LoginPage.scss";
+@use "./LoginPage.scss" as *;
 </style>

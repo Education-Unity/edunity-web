@@ -27,6 +27,7 @@ declare module 'vue' {
     MissionsPage: typeof import('./components/missions/MissionsPage.vue')['default']
     PricingPage: typeof import('./components/pricing/PricingPage.vue')['default']
     PrivacyPolicyPage: typeof import('./components/privacy/PrivacyPolicyPage.vue')['default']
+    RegisterPage: typeof import('./components/register/RegisterPage.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TermsOfServicePage: typeof import('./components/terms/TermsOfServicePage.vue')['default']
