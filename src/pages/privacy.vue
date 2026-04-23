@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import PrivacyPolicyPage from '@components/privacy/PrivacyPolicyPage.vue';
+import PrivacyPolicyPage from '@components/landing/privacy/PrivacyPolicyPage.vue';
 
 export default {
   name: "privacy",

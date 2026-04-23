@@ -6,7 +6,7 @@
 import ForumsHome from '@/components/landing/forums/ForumsHome.vue';
 
 export default {
-  name: "about",
+  name: "forums",
   components: {
     ForumsHome
   }

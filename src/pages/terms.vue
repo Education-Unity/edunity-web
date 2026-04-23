@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import TermsOfServicePage from '@components/terms/TermsOfServicePage';
+import TermsOfServicePage from '@components/landing/terms/TermsOfServicePage';
 
 export default {
   name: "terms",

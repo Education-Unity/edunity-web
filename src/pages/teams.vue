@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import TeamPage from '@/components/teams/TeamPage.vue';
+import TeamPage from '@/components/landing/teams/TeamPage.vue';
 
 export default {
   name: "teams",

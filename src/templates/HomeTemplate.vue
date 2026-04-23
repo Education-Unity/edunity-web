@@ -9,8 +9,8 @@
 </template>
 
 <script setup lang="ts">
-import HomeHeader from "@components/home/HomeHeader.vue"
-import HomeFooter from "@components/home/HomeFooter.vue"
+import HomeHeader from "@components/landing/home/HomeHeader.vue"
+import HomeFooter from "@components/landing/home/HomeFooter.vue"
 
 defineProps<{
   isReactive?: boolean

@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import HomePage from '@/components/home/HomePage.vue';
+import HomePage from '@/components/landing/home/HomePage.vue';
 
 export default {
   name: "privacy",

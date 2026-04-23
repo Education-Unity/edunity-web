@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import ContactPage from '@/components/contact/ContactPage';
+import ContactPage from '@/components/landing/contact/ContactPage';
 
 export default {
   name: "contact",

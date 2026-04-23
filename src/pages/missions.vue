@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import MissionsPage from '@/components/missions/MissionsPage.vue';
+import MissionsPage from '@/components/landing/missions/MissionsPage.vue';
 
 export default {
   name: "missions",

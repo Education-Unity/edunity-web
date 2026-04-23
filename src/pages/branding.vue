@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import BrandingPage from '@/components/branding/BrandingPage.vue';
+import BrandingPage from '@/components/landing/branding/BrandingPage.vue';
 
 export default {
   name: "branding",

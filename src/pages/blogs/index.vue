@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import BlogsHomePage from '@/components/blogs/BlogsHomePage.vue';
+import BlogsHomePage from '@/components/landing/blogs/BlogsHomePage.vue';
 
 export default {
   name: "about",

@@ -26,6 +26,8 @@ declare module 'vue-router/auto-routes' {
     '/branding': RouteRecordInfo<'/branding', '/branding', Record<never, never>, Record<never, never>>,
     '/contact': RouteRecordInfo<'/contact', '/contact', Record<never, never>, Record<never, never>>,
     '/forums/': RouteRecordInfo<'/forums/', '/forums', Record<never, never>, Record<never, never>>,
+    '/forums/category/[id]': RouteRecordInfo<'/forums/category/[id]', '/forums/category/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
+    '/forums/thread/[id]': RouteRecordInfo<'/forums/thread/[id]', '/forums/thread/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
     '/home': RouteRecordInfo<'/home', '/home', Record<never, never>, Record<never, never>>,
     '/login': RouteRecordInfo<'/login', '/login', Record<never, never>, Record<never, never>>,
     '/missions': RouteRecordInfo<'/missions', '/missions', Record<never, never>, Record<never, never>>,
@@ -77,6 +79,14 @@ declare module 'vue-router/auto-routes' {
     }
     'src/pages/forums/index.vue': {
       routes: '/forums/'
+      views: never
+    }
+    'src/pages/forums/category/[id].vue': {
+      routes: '/forums/category/[id]'
+      views: never
+    }
+    'src/pages/forums/thread/[id].vue': {
+      routes: '/forums/thread/[id]'
       views: never
     }
     'src/pages/home.vue': {
