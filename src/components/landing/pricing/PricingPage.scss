@@ -1,8 +1,16 @@
 @use "@styles/common.scss" as *;
 
 .pricing-page {
-  background: linear-gradient(to bottom bottom, #ffffff, #f0f9ff, #fdf4ff);
+  background: linear-gradient(to bottom, $primary-color, $tertiary-color);
   min-height: 100vh;
+
+  .btn-back {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    background-color: transparent;
+    color: #fff;
+    font-size: 25px;
+  }
 
   .pricing-container {
     max-width: 1280px;
@@ -11,21 +19,22 @@
   }
 
   .pricing-header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 3rem;
+    
 
     .pricing-title {
       font-size: 64px;
       font-weight: 600;
       background: linear-gradient(to right, $primary-color, $tertiary-color);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       margin-bottom: 1.5rem;
+      color: #fff !important;
     }
 
     .pricing-subtitle {
       font-size: 1.5rem;
-      color: #64748b;
+      color: #ffffff;
       max-width: 700px;
       margin: 0 auto;
     }
@@ -88,11 +97,14 @@
   .plan-card {
     border-radius: 1.5rem;
     padding: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
     border: 1px solid #e2e8f0;
     height: 100%;
 
     &:hover {
+      transform: translateY(-4px);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
     }
 
@@ -113,7 +125,7 @@
       .feature-list li {
         color: #fff !important;
       }
-      
+
       .feature-list li span {
         color: #e2e8f0;
       }
@@ -132,7 +144,7 @@
       .plan-description {
         color: #64748b;
         font-size: 0.95rem;
-        min-height: 44px; 
+        min-height: 44px;
       }
     }
 
@@ -198,6 +210,10 @@
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     border: 1px solid #f1f5f9;
 
+    .table-responsive {
+      overflow-x: auto;
+    }
+
     .comparison-table {
       width: 100%;
       border-collapse: collapse;
@@ -244,7 +260,7 @@
       tr:last-child td {
         border-bottom: none;
       }
-      
+
       tr:hover td {
         background-color: #f8fafc;
       }
@@ -279,7 +295,9 @@
     @media (max-width: 768px) {
       flex-direction: column;
       text-align: center;
-      .content p { margin: 0 auto; }
+      .content p {
+        margin: 0 auto;
+      }
     }
   }
 
@@ -291,8 +309,10 @@
       .faq-accordion {
         background: transparent;
         border-bottom: 1px solid #e2e8f0;
-        
-        &::before { display: none; } 
+
+        &::before {
+          display: none;
+        }
 
         .faq-question {
           font-weight: 600;

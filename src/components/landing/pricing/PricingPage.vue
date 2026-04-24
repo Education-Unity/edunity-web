@@ -1,12 +1,12 @@
 <template>
-  <HomeTemplate>
+  <BlankTemplate>
     <div class="pricing-page">
+      <v-btn class="btn-back" :flat="true" @click="router.back()"><v-icon icon="mdi-arrow-left" /></v-btn>
       <div class="pricing-container">
         <div class="pricing-header">
-          <h1 class="pricing-title">Choose Your Plan</h1>
+          <h1 class="pricing-title">Edunity+</h1>
           <p class="pricing-subtitle">
-            Flexible pricing for individuals, teams, and huge organizations.
-            Upgrade your learning experience today.
+            It's time to upgrade your learning experience!
           </p>
         </div>
 
@@ -73,11 +73,9 @@
                 <div v-if="!plan.isEnterprise">
                   <h3 class="price">
                     ${{ isAnnual ? plan.annualPrice : plan.monthlyPrice }}
-                    <span class="period">
-                      /{{ isAnnual ? "mo" : "mo" }}
-                    </span>
+                    <span class="period">/mo</span>
                   </h3>
-                  <p v-if="isAnnual" class="billed-yearly">
+                  <p v-if="isAnnual && plan.annualPrice > 0" class="billed-yearly">
                     Billed ${{ plan.annualPrice * 12 }} yearly
                   </p>
                 </div>
@@ -126,7 +124,7 @@
               <tbody>
                 <tr v-for="row in currentComparison" :key="row.feature">
                   <td class="feature-name">{{ row.feature }}</td>
-                  <td v-for="(plan, idx) in currentPlans" :key="idx" class="text-center">
+                  <td v-for="plan in currentPlans" :key="plan.id" class="text-center">
                     <template v-if="typeof row.values[plan.id] === 'boolean'">
                       <v-icon v-if="row.values[plan.id]" color="success">mdi-check</v-icon>
                       <v-icon v-else color="grey-lighten-1">mdi-minus</v-icon>
@@ -175,115 +173,27 @@
         </div>
       </div>
     </div>
-  </HomeTemplate>
+  </BlankTemplate>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
-import HomeTemplate from "@/templates/HomeTemplate.vue";
 import { setBrowserTitle } from "@/utils/web_util";
+import BlankTemplate from "@/templates/BlankTemplate.vue";
+import { plansData, comparisonData, faqs } from "./pricing_attr";
 
 const isAnnual = ref(true);
 const activeCategory = ref("Personal");
 const expanded = ref(null);
 
-const plansData = {
-  Personal: [
-    {
-      id: "free",
-      name: "Free",
-      monthlyPrice: 0,
-      annualPrice: 0,
-      description: "For casual learning",
-      features: ["5 Quizzes per month", "Basic Analytics", "Community Support"],
-      cta: "Get Started",
-      popular: false,
-      isEnterprise: false,
-      link: "/register",
-    },
-    {
-      id: "pro",
-      name: "Pro",
-      monthlyPrice: 12,
-      annualPrice: 9,
-      description: "For power users",
-      features: ["Unlimited Quizzes", "Advanced Analytics", "No Ads", "Priority Support"],
-      cta: "Start Free Trial",
-      popular: true,
-      isEnterprise: false,
-      link: "/register?plan=pro",
-    },
-  ],
-  Business: [
-    {
-      id: "team",
-      name: "Team",
-      monthlyPrice: 49,
-      annualPrice: 39,
-      description: "For small teams & schools",
-      features: ["5 Team Seats", "Collaborative Editing", "Team Folders", "Admin Dashboard"],
-      cta: "Start Team Trial",
-      popular: true,
-      isEnterprise: false,
-      link: "/register?plan=team",
-    },
-    {
-      id: "enterprise",
-      name: "Enterprise",
-      monthlyPrice: 0,
-      annualPrice: 0,
-      description: "For large organizations",
-      features: ["Unlimited Seats", "SSO (SAML)", "Dedicated Success Manager", "Custom SLA"],
-      cta: "Contact Sales",
-      popular: false,
-      isEnterprise: true,
-      link: "/contact",
-    },
-  ],
-};
-
-const comparisonData = {
-  Personal: [
-    { feature: "Quizzes per month", values: { free: "5", pro: "Unlimited" } },
-    { feature: "Players per game", values: { free: "10", pro: "100" } },
-    { feature: "Ad-free experience", values: { free: false, pro: true } },
-    { feature: "Data Export", values: { free: false, pro: true } },
-    { feature: "Support", values: { free: "Community", pro: "Priority Email" } },
-  ],
-  Business: [
-    { feature: "Team Members", values: { team: "Up to 5", enterprise: "Unlimited" } },
-    { feature: "SSO / SAML", values: { team: false, enterprise: true } },
-    { feature: "API Access", values: { team: "Read-only", enterprise: "Full Access" } },
-    { feature: "Audit Logs", values: { team: true, enterprise: true } },
-    { feature: "Custom Branding", values: { team: true, enterprise: true } },
-    { feature: "Training", values: { team: "Docs", enterprise: "Live Sessions" } },
-  ],
-};
-
 const currentPlans = computed(() => plansData[activeCategory.value]);
 const currentComparison = computed(() => comparisonData[activeCategory.value]);
-
-const faqs = [
-  {
-    id: "faq1",
-    question: "Can I change my plan later?",
-    answer: "Yes! You can upgrade, downgrade, or cancel your subscription at any time.",
-  },
-  {
-    id: "faq2",
-    question: "How does the Enterprise plan work?",
-    answer: "Contact our sales team. We will tailor a contract based on your seat requirements and security needs.",
-  },
-  {
-    id: "faq3",
-    question: "Do you offer refunds?",
-    answer: "We offer a 30-day money-back guarantee for all paid annual plans.",
-  },
-];
 
 onMounted(() => {
   setBrowserTitle("Pricing & Plans");
 });
 </script>
 
-<style lang="scss" src="./PricingPage.scss"></style>
+<style lang="scss" scoped>
+@use "./PricingPage.scss" as *;
+</style>
