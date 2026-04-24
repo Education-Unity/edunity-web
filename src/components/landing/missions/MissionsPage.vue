@@ -74,7 +74,7 @@
         </div>
 
         <div className="mission-callout">
-          <h2 className="callout-title">Where We’re Headed</h2>
+          <h2 className="callout-title">Where we're headed</h2>
           <p>
             Our journey pushes us toward a future where education feels more
             like discovery, storytelling, and play. Edunity is committed to
@@ -83,7 +83,7 @@
             exploration.
           </p>
           <p>
-            Together with our community, we’re shaping a new era of
+            Together with our community, we're shaping a new era of
             interactive learning—one quiz, one game, one spark of curiosity at
             a time.
           </p>
@@ -114,7 +114,7 @@ const pillars = [
   {
     title: "Community-Driven Growth",
     description:
-      "We’re building a collaborative environment where teachers, students, and creators shape the next era of interactive education together.",
+      "We're building a collaborative environment where teachers, students, and creators shape the next era of interactive education together.",
     icon: "🌱",
   },
 ];

@@ -180,13 +180,9 @@
   margin-bottom: 4rem;
 
   .icon-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-    }
   }
 
   .icon-recommendation,
@@ -454,10 +450,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 2rem;
+      gap: 3rem;
+      background-color: #FFF;
 
       * {
         margin: 0;
+        color: #000 !important;
       }
     }
   }

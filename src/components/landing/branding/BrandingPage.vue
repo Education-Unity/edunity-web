@@ -70,7 +70,7 @@
           <h2 class="section-title">Icon Set</h2>
           <div class="icon-section">
             <div class="icon-recommendation">
-              <h3>Recommended Icon Library</h3>
+              <h3>Icon Library</h3>
               <p>Material Symbols (outlined, rounded variant)</p>
               <div class="icon-preview">
                 <div class="icon-item">
@@ -89,12 +89,16 @@
                   <v-icon size="48">mdi-home</v-icon>
                   <span>48px</span>
                 </div>
+                <div class="icon-item">
+                  <v-icon size="64">mdi-home</v-icon>
+                  <span>64px</span>
+                </div>
               </div>
             </div>
             <div class="icon-guidelines">
               <h3>Icon Guidelines</h3>
               <ul>
-                <li>Consistent stroke width: 1.5–2px</li>
+                <li>Consistent stroke width: 1.5-2px</li>
                 <li>Size scale: 20px (small), 24px (default), 32px (large), 48px (hero)</li>
                 <li>Use outlined rounded variant for consistency</li>
                 <li>Icons should be paired with text labels when conveying critical information</li>
@@ -150,9 +154,9 @@
               <h3>Incorrect Capitalization</h3>
               <p>Avoid random capitalization that can create confusion and affect SEO.</p>
               <div class="bad-examples">
-                <span class="bad">❌ EdUnity</span>
-                <span class="bad">❌ EDUNITY</span>
-                <span class="bad">❌ edunity</span>
+                <span class="bad"><v-icon icon="mdi-close" /> EdUnity</span>
+                <span class="bad"><v-icon icon="mdi-close" /> EDUNITY</span>
+                <span class="bad"><v-icon icon="mdi-close" /> edunity</span>
                 <span class="good">✓ Edunity</span>
               </div>
             </div>
@@ -161,9 +165,9 @@
               <h3>Misspellings</h3>
               <p>Avoid typos or variations that redirect to other unrelated service brands.</p>
               <div class="bad-examples">
-                <span class="bad">❌ EduNity</span>
-                <span class="bad">❌ Eduniti</span>
-                <span class="bad">❌ Eduunity</span>
+                <span class="bad"><v-icon icon="mdi-close" /> EduNity</span>
+                <span class="bad"><v-icon icon="mdi-close" /> Eduniti</span>
+                <span class="bad"><v-icon icon="mdi-close" /> Eduunity</span>
               </div>
             </div>
             <div class="prohibited-card">
@@ -171,9 +175,9 @@
               <h3>Abbreviations</h3>
               <p>Avoid abbreviating the brand name in public-facing materials.</p>
               <div class="bad-examples">
-                <span class="bad">❌ ENU</span>
-                <span class="bad">❌ Ednity</span>
-                <span class="bad">❌ EDNY</span>
+                <span class="bad"><v-icon icon="mdi-close" /> ENU</span>
+                <span class="bad"><v-icon icon="mdi-close" /> Ednity</span>
+                <span class="bad"><v-icon icon="mdi-close" /> EDNY</span>
               </div>
             </div>
           </div>
@@ -183,7 +187,7 @@
           <h2 class="section-title">Legal & Usage</h2>
           <div class="legal-content">
             <div class="allowed-section">
-              <h3>✅ Allowed</h3>
+              <h3><v-icon icon="mdi-check" /> Allowed</h3>
               <ul>
                 <li>Use of official Edunity logos in press kits, news articles, and product reviews.</li>
                 <li>Use of brand marks for community events or educational showcases referencing Edunity.</li>
@@ -193,7 +197,7 @@
             </div>
 
             <div class="not-allowed-section">
-              <h3>❌ Not Allowed</h3>
+              <h3><v-icon icon="mdi-close" /> Not Allowed</h3>
               <ul>
                 <li>Modifying, distorting, recoloring, or altering official Edunity logos.</li>
                 <li>Using Edunity branding to imply partnership, endorsement, or affiliation without approval.</li>
@@ -210,11 +214,11 @@
         <p>For brand usage inquiries, asset requests, or partnership approvals, please contact our brand team by these
           options:</p>
         <div class="contact-links">
-          <v-btn class="btn-contact" variant="outlined" color="#7C3AED" href="mailto:brand@edunity.com">
+          <v-btn class="btn-contact" variant="filled" href="mailto:brand@edunity.com">
             <v-icon left>mdi-email</v-icon>
             <p>brand@edunity.com</p>
           </v-btn>
-          <v-btn class="btn-contact" variant="outlined" color="#7C3AED" to="/contact">
+          <v-btn class="btn-contact" variant="filled" to="/contact">
             <v-icon left>mdi-chat</v-icon>
             <p>Contact Form</p>
           </v-btn>
