@@ -8,6 +8,11 @@
           <p class="pricing-subtitle">
             It's time to upgrade your learning experience!
           </p>
+          <p class="pricing-description">
+            Choose the perfect plan for your needs. From individual learners to large enterprises,
+            we have solutions that scale with you. Get access to premium content, advanced analytics,
+            and dedicated support.
+          </p>
         </div>
 
         <div class="category-toggle">
@@ -78,9 +83,13 @@
                   <p v-if="isAnnual && plan.annualPrice > 0" class="billed-yearly">
                     Billed ${{ plan.annualPrice * 12 }} yearly
                   </p>
+                  <p v-else-if="!isAnnual && plan.monthlyPrice > 0" class="billed-yearly">
+                    Cancel anytime
+                  </p>
                 </div>
                 <div v-else>
                   <h3 class="price">Custom</h3>
+                  <p class="billed-yearly">Tailored pricing</p>
                 </div>
               </div>
 
@@ -132,8 +141,8 @@
                     <template v-else>
                       <span class="text-value">{{ row.values[plan.id] }}</span>
                     </template>
-                  </td>
-                </tr>
+                   </td>
+                 </tr>
               </tbody>
             </v-table>
           </div>

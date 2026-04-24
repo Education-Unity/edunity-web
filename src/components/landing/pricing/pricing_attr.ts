@@ -1,124 +1,275 @@
-export interface Plan {
-  id: string;
-  name: string;
-  monthlyPrice: number;
-  annualPrice: number;
-  description: string;
-  features: string[];
-  cta: string;
-  popular: boolean;
-  isEnterprise: boolean;
-  link: string;
-}
-
-export interface ComparisonRow {
-  feature: string;
-  values: Record<string, string | boolean>;
-}
-
-export interface FAQ {
-  id: string;
-  question: string;
-  answer: string;
-}
-
-export const plansData: Record<string, Plan[]> = {
+export const plansData = {
   Personal: [
     {
-      id: "free",
-      name: "Free",
-      monthlyPrice: 0,
-      annualPrice: 0,
-      description: "For casual learning",
-      features: ["5 Quizzes per month", "Basic Analytics", "Community Support"],
-      cta: "Get Started",
+      id: 'basic',
+      name: 'Basic',
+      description: 'Perfect for getting started',
+      monthlyPrice: 9.99,
+      annualPrice: 7.99,
       popular: false,
       isEnterprise: false,
-      link: "/register",
+      cta: 'Get Started',
+      link: '/signup',
+      features: [
+        'Access to basic courses',
+        'Community support',
+        'Mobile access',
+        'Basic analytics'
+      ]
     },
     {
-      id: "pro",
-      name: "Pro",
-      monthlyPrice: 12,
-      annualPrice: 9,
-      description: "For power users",
-      features: ["Unlimited Quizzes", "Advanced Analytics", "No Ads", "Priority Support"],
-      cta: "Start Free Trial",
+      id: 'pro',
+      name: 'Pro',
+      description: 'Best for serious learners',
+      monthlyPrice: 19.99,
+      annualPrice: 15.99,
       popular: true,
       isEnterprise: false,
-      link: "/register?plan=pro",
+      cta: 'Go Pro',
+      link: '/signup',
+      features: [
+        'Everything in Basic',
+        'All courses access',
+        'Priority support',
+        'Certificates of completion',
+        'Advanced analytics',
+        'Offline access'
+      ]
     },
+    {
+      id: 'team',
+      name: 'Team',
+      description: 'For groups and organizations',
+      monthlyPrice: 29.99,
+      annualPrice: 23.99,
+      popular: false,
+      isEnterprise: false,
+      cta: 'Contact Sales',
+      link: '/contact',
+      features: [
+        'Everything in Pro',
+        'Team management',
+        'Admin dashboard',
+        'Bulk enrollment',
+        'API access',
+        'Dedicated account manager'
+      ]
+    }
   ],
   Business: [
     {
-      id: "team",
-      name: "Team",
-      monthlyPrice: 49,
-      annualPrice: 39,
-      description: "For small teams & schools",
-      features: ["5 Team Seats", "Collaborative Editing", "Team Folders", "Admin Dashboard"],
-      cta: "Start Team Trial",
-      popular: true,
+      id: 'team',
+      name: 'Team',
+      description: 'For small to medium teams',
+      monthlyPrice: 49.99,
+      annualPrice: 39.99,
+      popular: false,
       isEnterprise: false,
-      link: "/register?plan=team",
+      cta: 'Contact Sales',
+      link: '/contact',
+      features: [
+        'Up to 50 users',
+        'Team collaboration tools',
+        'Admin controls',
+        'Analytics dashboard',
+        'Priority support',
+        'SSO integration'
+      ]
     },
     {
-      id: "enterprise",
-      name: "Enterprise",
-      monthlyPrice: 0,
-      annualPrice: 0,
-      description: "For large organizations",
-      features: ["Unlimited Seats", "SSO (SAML)", "Dedicated Success Manager", "Custom SLA"],
-      cta: "Contact Sales",
+      id: 'business',
+      name: 'Business',
+      description: 'For growing organizations',
+      monthlyPrice: 99.99,
+      annualPrice: 79.99,
+      popular: true,
+      isEnterprise: false,
+      cta: 'Contact Sales',
+      link: '/contact',
+      features: [
+        'Up to 200 users',
+        'Everything in Team',
+        'Custom reporting',
+        'Advanced security',
+        '24/7 phone support',
+        'API access',
+        'Custom integrations'
+      ]
+    },
+    {
+      id: 'enterprise',
+      name: 'Enterprise',
+      description: 'For large organizations',
+      monthlyPrice: null,
+      annualPrice: null,
       popular: false,
       isEnterprise: true,
-      link: "/contact",
-    },
-  ],
+      cta: 'Talk to Sales',
+      link: '/contact',
+      features: [
+        'Unlimited users',
+        'Everything in Business',
+        'Custom SLA',
+        'Dedicated infrastructure',
+        'On-premise deployment',
+        'Custom training',
+        'Strategic consulting'
+      ]
+    }
+  ]
 };
 
-export const comparisonData: Record<string, ComparisonRow[]> = {
+export const comparisonData = {
   Personal: [
-    { feature: "Quizzes per month", values: { free: "5", pro: "Unlimited" } },
-    { feature: "Players per game", values: { free: "10", pro: "100" } },
-    { feature: "Ad-free experience", values: { free: false, pro: true } },
-    { feature: "Data Export", values: { free: false, pro: true } },
-    { feature: "Support", values: { free: "Community", pro: "Priority Email" } },
+    {
+      feature: 'Number of Courses',
+      values: {
+        basic: '50+',
+        pro: '200+',
+        team: '500+'
+      }
+    },
+    {
+      feature: 'Certificates',
+      values: {
+        basic: false,
+        pro: true,
+        team: true
+      }
+    },
+    {
+      feature: 'Download Videos',
+      values: {
+        basic: false,
+        pro: true,
+        team: true
+      }
+    },
+    {
+      feature: 'Priority Support',
+      values: {
+        basic: false,
+        pro: true,
+        team: true
+      }
+    },
+    {
+      feature: 'Team Management',
+      values: {
+        basic: false,
+        pro: false,
+        team: true
+      }
+    },
+    {
+      feature: 'API Access',
+      values: {
+        basic: false,
+        pro: false,
+        team: true
+      }
+    },
+    {
+      feature: 'Analytics',
+      values: {
+        basic: 'Basic',
+        pro: 'Advanced',
+        team: 'Enterprise'
+      }
+    }
   ],
   Business: [
-    { feature: "Team Members", values: { team: "Up to 5", enterprise: "Unlimited" } },
-    { feature: "SSO / SAML", values: { team: false, enterprise: true } },
-    { feature: "API Access", values: { team: "Read-only", enterprise: "Full Access" } },
-    { feature: "Audit Logs", values: { team: true, enterprise: true } },
-    { feature: "Custom Branding", values: { team: true, enterprise: true } },
-    { feature: "Training", values: { team: "Docs", enterprise: "Live Sessions" } },
-  ],
+    {
+      feature: 'Max Users',
+      values: {
+        team: '50',
+        business: '200',
+        enterprise: 'Unlimited'
+      }
+    },
+    {
+      feature: 'SSO Integration',
+      values: {
+        team: true,
+        business: true,
+        enterprise: true
+      }
+    },
+    {
+      feature: 'Custom Reporting',
+      values: {
+        team: false,
+        business: true,
+        enterprise: true
+      }
+    },
+    {
+      feature: '24/7 Support',
+      values: {
+        team: false,
+        business: true,
+        enterprise: true
+      }
+    },
+    {
+      feature: 'Custom SLA',
+      values: {
+        team: false,
+        business: false,
+        enterprise: true
+      }
+    },
+    {
+      feature: 'On-premise Deployment',
+      values: {
+        team: false,
+        business: false,
+        enterprise: true
+      }
+    },
+    {
+      feature: 'Training Sessions',
+      values: {
+        team: 'Basic',
+        business: 'Quarterly',
+        enterprise: 'Monthly'
+      }
+    },
+    {
+      feature: 'Account Manager',
+      values: {
+        team: false,
+        business: true,
+        enterprise: true
+      }
+    }
+  ]
 };
 
-export const faqs: FAQ[] = [
+export const faqs = [
   {
-    id: "faq1",
-    question: "Can I change my plan later?",
-    answer: "Yes! You can upgrade, downgrade, or cancel your subscription at any time.",
+    id: 1,
+    question: 'Can I switch plans later?',
+    answer: 'Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.'
   },
   {
-    id: "faq2",
-    question: "How does the Enterprise plan work?",
-    answer: "Contact our sales team. We will tailor a contract based on your seat requirements and security needs.",
+    id: 2,
+    question: 'Do you offer student discounts?',
+    answer: 'Yes, students with a valid .edu email get 50% off on the Pro plan. Contact our support team for verification.'
   },
   {
-    id: "faq3",
-    question: "Do you offer refunds?",
-    answer: "We offer a 30-day money-back guarantee for all paid annual plans.",
+    id: 3,
+    question: 'Is there a free trial?',
+    answer: 'Yes, all plans come with a 14-day free trial. No credit card required to start.'
   },
   {
-    id: "faq4",
-    question: "Can I switch between Personal and Business plans?",
-    answer: "Yes, you can upgrade from Personal to Business at any time. Contact support for assistance with migration.",
+    id: 4,
+    question: 'What payment methods do you accept?',
+    answer: 'We accept all major credit cards, PayPal, and bank transfers for annual plans.'
   },
   {
-    id: "faq5",
-    question: "What payment methods do you accept?",
-    answer: "We accept all major credit cards, PayPal, and bank transfers for Enterprise plans.",
-  },
+    id: 5,
+    question: 'Can I cancel anytime?',
+    answer: 'Yes, you can cancel your subscription at any time. No cancellation fees.'
+  }
 ];
