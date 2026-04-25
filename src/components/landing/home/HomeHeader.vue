@@ -52,7 +52,7 @@ const goHome = () => {
       </v-btn>
 
       <div class="nav-links d-none d-md-flex">
-        <v-btn to="/" variant="text">Home</v-btn>
+        <v-btn to="/landing/" variant="text">Home</v-btn>
 
         <v-menu>
           <template #activator="{ props: menuProps }">
@@ -62,8 +62,8 @@ const goHome = () => {
             </v-btn>
           </template>
           <v-list>
-            <v-list-item to="/about" title="About Us" />
-            <v-list-item to="/teams" title="Our Team" />
+            <v-list-item to="/landing/about" title="About Us" />
+            <v-list-item to="/landing/teams" title="Our Team" />
           </v-list>
         </v-menu>
 
@@ -75,12 +75,12 @@ const goHome = () => {
             </v-btn>
           </template>
           <v-list>
-            <v-list-item to="/blogs" title="Blogs" />
-            <v-list-item to="/forums" title="Forums" />
+            <v-list-item to="/landing/blogs" title="Blogs" />
+            <v-list-item to="/landing/forums" title="Forums" />
           </v-list>
         </v-menu>
 
-        <v-btn to="/pricing" variant="text">Pricing</v-btn>
+        <v-btn to="/landing/pricing" variant="text">Pricing</v-btn>
       </div>
     </div>
 
@@ -88,7 +88,7 @@ const goHome = () => {
 
     <div class="header-right">
       <template v-if="!isLoggedIn">
-        <v-btn to="/login" variant="outlined" rounded>Login</v-btn>
+        <v-btn to="/landing/login" variant="outlined" rounded>Login</v-btn>
       </template>
 
       <template v-else>
@@ -116,8 +116,8 @@ const goHome = () => {
           </template>
 
           <v-list>
-            <v-list-item to="/portal" title="Portal" />
-            <v-list-item to="/profile" title="Profile Settings" />
+            <v-list-item to="/landing/portal" title="Portal" />
+            <v-list-item to="/landing/profile" title="Profile Settings" />
             <v-list-item @click="logout" title="Logout" class="text-error" />
           </v-list>
         </v-menu>
@@ -127,17 +127,17 @@ const goHome = () => {
 
   <v-navigation-drawer v-model="drawer" location="left" temporary>
     <v-list nav>
-      <v-list-item to="/" title="Home" />
-      <v-list-item to="/about" title="About Us" />
-      <v-list-item to="/teams" title="Our Team" />
-      <v-list-item to="/blogs" title="Blogs" />
-      <v-list-item to="/forums" title="Forums" />
-      <v-list-item to="/pricing" title="Pricing" />
+      <v-list-item to="/landing/" title="Home" />
+      <v-list-item to="/landing/about" title="About Us" />
+      <v-list-item to="/landing/teams" title="Our Team" />
+      <v-list-item to="/landing/blogs" title="Blogs" />
+      <v-list-item to="/landing/forums" title="Forums" />
+      <v-list-item to="/landing/pricing" title="Pricing" />
       <v-divider class="my-2" />
-      <v-list-item v-if="!isLoggedIn" to="/login" title="Login" />
+      <v-list-item v-if="!isLoggedIn" to="/landing/login" title="Login" />
       <template v-else>
-        <v-list-item to="/portal" title="Portal" />
-        <v-list-item to="/profile" title="Profile Settings" />
+        <v-list-item to="/landing/portal" title="Portal" />
+        <v-list-item to="/landing/profile" title="Profile Settings" />
         <v-list-item @click="logout" title="Logout" class="text-error" />
       </template>
     </v-list>

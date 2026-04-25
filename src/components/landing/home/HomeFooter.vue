@@ -20,30 +20,30 @@ import logo from '@assets/logo.webp'
         <v-col cols="12" md="auto" class="footer-section">
           <h3 class="footer-title">Products</h3>
           <v-list density="compact" class="footer-links">
-            <v-list-item to="/about" title="About" />
-            <v-list-item to="/pricing" title="Pricing" />
-            <v-list-item to="/missions" title="Mission" />
+            <v-list-item to="/landing/about" title="About" />
+            <v-list-item to="/landing/pricing" title="Pricing" />
+            <v-list-item to="/landing/missions" title="Mission" />
           </v-list>
         </v-col>
 
         <v-col cols="12" md="auto" class="footer-section">
           <h3 class="footer-title">Resources</h3>
           <v-list density="compact" class="footer-links">
-            <v-list-item to="/blogs" title="Blogs" />
-            <v-list-item to="/forums" title="Forums" />
-            <v-list-item to="/faq" title="FAQ" />
-            <v-list-item to="/contact" title="Contact" />
+            <v-list-item to="/landing/blogs" title="Blogs" />
+            <v-list-item to="/landing/forums" title="Forums" />
+            <v-list-item to="/landing/faq" title="FAQ" />
+            <v-list-item to="/landing/contact" title="Contact" />
           </v-list>
         </v-col>
 
         <v-col cols="12" md="auto" class="footer-section">
           <h3 class="footer-title">Company</h3>
           <v-list density="compact" class="footer-links">
-            <v-list-item to="/about" title="About Us" />
-            <v-list-item to="/team" title="Team" />
-            <v-list-item to="/help" title="Help Center" />
-            <v-list-item to="/terms" title="Terms of Service" />
-            <v-list-item to="/privacy" title="Privacy Policy" />
+            <v-list-item to="/landing/about" title="About Us" />
+            <v-list-item to="/landing/team" title="Team" />
+            <v-list-item to="/landing/help" title="Help Center" />
+            <v-list-item to="/landing/terms" title="Terms of Service" />
+            <v-list-item to="/landing/privacy" title="Privacy Policy" />
           </v-list>
         </v-col>
 

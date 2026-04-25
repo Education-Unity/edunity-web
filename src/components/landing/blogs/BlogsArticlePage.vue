@@ -229,7 +229,6 @@ function goToArticle(id: number) {
 </script>
 
 <style lang="scss" scoped>
-@use "@styles/common.scss" as *;
+@use "./BlogsArticlePage.scss" as *;
 
-@import "./BlogsArticlePage.scss";
 </style>

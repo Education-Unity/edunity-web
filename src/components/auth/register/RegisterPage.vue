@@ -145,6 +145,7 @@ import logo from "@/assets/logo.webp"
 import { aPost } from "@/api/axiosService"
 import { setBrowserTitle } from "@/utils/web_util"
 import countryList from "country-list"
+//@ts-ignore
 import { VueTelInput } from "vue-tel-input"
 import "vue-tel-input/vue-tel-input.css"
 

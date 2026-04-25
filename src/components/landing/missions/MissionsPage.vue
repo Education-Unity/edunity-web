@@ -96,7 +96,7 @@
 <script setup>
 import { onMounted } from "vue";
 import HomeTemplate from '@/templates/HomeTemplate.vue'
-import { setBrowserTitle } from "../../utils/web_util";
+import { setBrowserTitle } from "@/utils/web_util";
 
 const pillars = [
   {
