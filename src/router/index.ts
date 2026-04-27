@@ -8,30 +8,12 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { routes } from "vue-router/auto-routes";
 
-const hostname = window.location.hostname;
-
-const subdomain = hostname.includes(".") ? hostname.split(".")[0] : "landing";
-
-const subdomainMap: Record<string, string> = {
-  landing: "landing",
-  community: "community",
-  app: "app",
-  admin: "admin",
-};
-
-const section = subdomainMap[subdomain] ?? "landing";
-const subdomainRoutes = [
-  {
-    path: "/",
-    redirect: `/${section}`,
-  },
-  ...routes.filter((r) => r.path.startsWith(`/${section}`)),
-];
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: subdomainRoutes,
-  scrollBehavior: () => ({ top: 0 }),
+  routes,
+  scrollBehavior() {
+    return { top: 0 };
+  },
 });
 
 // Workaround for https://github.com/vitejs/vite/issues/11804
