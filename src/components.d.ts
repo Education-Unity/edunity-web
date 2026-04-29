@@ -12,11 +12,13 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AboutPage: typeof import('./components/landing/about/AboutPage.vue')['default']
+    AppSidebar: typeof import('./components/app/common/AppSidebar.vue')['default']
     BlogsArticlePage: typeof import('./components/landing/blogs/BlogsArticlePage.vue')['default']
     BlogsHomePage: typeof import('./components/landing/blogs/BlogsHomePage.vue')['default']
     BrandingPage: typeof import('./components/landing/branding/BrandingPage.vue')['default']
     ContactPage: typeof import('./components/landing/contact/ContactPage.vue')['default']
     CustomBreadcrumb: typeof import('./components/commons/CustomBreadcrumb.vue')['default']
+    DashboardSummary: typeof import('./components/app/dashboard/DashboardSummary.vue')['default']
     ForumsCategory: typeof import('./components/landing/forums/ForumsCategory.vue')['default']
     ForumsHome: typeof import('./components/landing/forums/ForumsHome.vue')['default']
     ForumsThread: typeof import('./components/landing/forums/ForumsThread.vue')['default']
